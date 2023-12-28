@@ -12,7 +12,11 @@ type TitleHandler struct {
 }
 
 func NewTitle() *TitleHandler {
-	return &TitleHandler{TitleInfo: &model.TitleInfo{}}
+	return &TitleHandler{
+		TitleInfo: &model.TitleInfo{
+			Titles: []string{"バンジージャンプ", "蹴鞠", "書き初め"},
+		},
+	}
 }
 
 func (h *TitleHandler) GetTitle(c *gin.Context) {
