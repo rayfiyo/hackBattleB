@@ -14,14 +14,14 @@ func main() {
 	// CORS
 	r.Use(cors.Default()) // 全部のオリジン許可
 
-	h := handler.NewTitle()
+	t := handler.NewTitle()
 	m := handler.NewMode()
 
-	r.GET("/clear", handler.Clear)
+	r.GET("/clear", t.ClearTitle)
 	r.GET("/getMode", m.GetMode)
-	r.GET("/getTitle", h.GetTitle)
+	r.GET("/getTitle", t.GetTitle)
 	r.GET("/setMode", m.SetMode)
-	r.GET("/sendTitle", h.SendTitle)
+	r.GET("/sendTitle", t.SendTitle)
 
 	r.Run()
 }

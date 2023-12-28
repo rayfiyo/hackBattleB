@@ -19,6 +19,13 @@ func NewTitle() *TitleHandler {
 	}
 }
 
+func (h *TitleHandler) ClearTitle(c *gin.Context) {
+	h.Titles = []string{"全て叶いました✨"}
+	c.JSON(http.StatusOK, gin.H{
+		"Status": "OK",
+	})
+}
+
 func (h *TitleHandler) GetTitle(c *gin.Context) {
 	titlesArray := make([]gin.H, len(h.Titles))
 	for i, t := range h.Titles {
