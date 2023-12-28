@@ -1,18 +1,18 @@
 package model
 
 type ResTitle struct {
-	Title string `json:"title"`
+	Title string
 }
 
 type TransMode struct {
-	ModeID int `json:"mode_id"`
+	ModeID int
 }
 
 type Receive struct {
-	ApiID  string `json:"api_id"`
-	ModeID int    `json:"mode_id"` // setMode の 遷移先を設定するときだけ
+	ApiID  string
+	ModeID int // setMode の 遷移先を設定するときだけ
 }
 
 type Result struct {
-	Status string `json:"status"`
+	Status string
 }

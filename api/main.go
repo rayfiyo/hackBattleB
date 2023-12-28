@@ -11,10 +11,11 @@ func main() {
     // r := gin.New()
 	r := gin.Default()
 
-	r.GET("/getTitle", handler.GetTitle)
-	r.GET("/getMode", handler.GetMode)
-	r.GET("/setMode", handler.SetMode)
 	r.GET("/clear", handler.Clear)
+	r.GET("/getMode", handler.GetMode)
+	r.GET("/getTitle", handler.GetTitle)
+	r.GET("/setMode", handler.SetMode)
+	r.GET("/sendTitle", handler.SendTitle)
 
 	r.Run()
 }

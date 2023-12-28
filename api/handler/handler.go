@@ -1,11 +1,22 @@
 package handler
 
 import (
-	"api/util"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
+
+func Clear(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{
+		"Status": "OK",
+	})
+}
+
+func GetMode(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{
+		"ModeID": 0,
+	})
+}
 
 func GetTitle(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
@@ -13,14 +24,16 @@ func GetTitle(c *gin.Context) {
 	})
 }
 
-func GetMode(c *gin.Context) {
-	c.JSON(http.StatusOK, util.ReadMode)
-}
-
 func SetMode(c *gin.Context) {
-	c.JSON(http.StatusOK, util.WriteMode)
+	c.JSON(http.StatusOK, gin.H{
+		"Status": "OK",
+	})
 }
 
-func Clear(c *gin.Context) {
-	c.JSON(http.StatusOK, util.Clear)
+func SendTitle(c *gin.Context) {
+	title := c.Query("title")
+	c.JSON(http.StatusOK, gin.H{
+		"title": title,
+		// "Status": "OK",
+	})
 }
