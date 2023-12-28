@@ -20,7 +20,7 @@ func NewTitle() *TitleHandler {
 }
 
 func (h *TitleHandler) ClearTitle(c *gin.Context) {
-	h.Titles = []string{"全て叶いました✨"}
+	h.Titles = []string{"全て叶いました✨", "また来年！"}
 	c.JSON(http.StatusOK, gin.H{
 		"Status": "OK",
 	})
