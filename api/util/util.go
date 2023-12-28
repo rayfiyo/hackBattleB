@@ -6,8 +6,8 @@ import (
 
 // とりあえず，レスポンスだけ実装
 
-func ReadTitle() model.ResTitle {
-	title := model.ResTitle{
+func ReadTitle() model.TitleInfo {
+	title := model.TitleInfo{
 		Title: "バンジージャンプ",
 	}
 	return title

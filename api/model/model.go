@@ -1,7 +1,7 @@
 package model
 
-type ResTitle struct {
-	Title string
+type TitleInfo struct {
+	Titles []string
 }
 
 type TransMode struct {
@@ -15,4 +15,16 @@ type Receive struct {
 
 type Result struct {
 	Status string
+}
+
+func NewTitle() *TitleInfo {
+	return &TitleInfo{}
+}
+
+func NewTitleHandler() *TitleHandler {
+	return &TitleHandler{TitleInfo: &TitleInfo{}}
+}
+
+type TitleHandler struct {
+	*TitleInfo
 }

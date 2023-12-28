@@ -8,14 +8,16 @@ import (
 
 func main() {
 	// gin.SetMode(gin.ReleaseMode)
-    // r := gin.New()
+	// r := gin.New()
 	r := gin.Default()
+
+	h := handler.NewTitle()
 
 	r.GET("/clear", handler.Clear)
 	r.GET("/getMode", handler.GetMode)
-	r.GET("/getTitle", handler.GetTitle)
+	r.GET("/getTitle", h.GetTitle)
 	r.GET("/setMode", handler.SetMode)
-	r.GET("/sendTitle", handler.SendTitle)
+	r.GET("/sendTitle", h.SendTitle)
 
 	r.Run()
 }
