@@ -8,19 +8,19 @@ import (
 )
 
 func main() {
-	// gin.SetMode(gin.ReleaseMode)
-	// r := gin.New()
+	// gin.SetMode(gin.ReleaseMode) // リリースモード！！！
 	r := gin.Default()
 
 	// CORS
-	r.Use(cors.Default())
+	r.Use(cors.Default()) // 全部のオリジン許可
 
 	h := handler.NewTitle()
+	m := handler.NewMode()
 
 	r.GET("/clear", handler.Clear)
-	r.GET("/getMode", handler.GetMode)
+	r.GET("/getMode", m.GetMode)
 	r.GET("/getTitle", h.GetTitle)
-	r.GET("/setMode", handler.SetMode)
+	r.GET("/setMode", m.SetMode)
 	r.GET("/sendTitle", h.SendTitle)
 
 	r.Run()
