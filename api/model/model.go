@@ -1,9 +1,23 @@
+/*
 package model
 
 type TitleInfo struct {
 	Titles []string
 }
 
+func NewTitle() *TitleInfo {
+	return &TitleInfo{}
+}
+
+type TitleHandler struct {
+	*TitleInfo
+}
+
+func NewTitleHandler() *TitleHandler {
+	return &TitleHandler{TitleInfo: &TitleInfo{}}
+}
+
+/*
 type TransMode struct {
 	ModeID int
 }
@@ -16,15 +30,4 @@ type Receive struct {
 type Result struct {
 	Status string
 }
-
-func NewTitle() *TitleInfo {
-	return &TitleInfo{}
-}
-
-func NewTitleHandler() *TitleHandler {
-	return &TitleHandler{TitleInfo: &TitleInfo{}}
-}
-
-type TitleHandler struct {
-	*TitleInfo
-}
+*/
